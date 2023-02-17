@@ -11,7 +11,8 @@ import (
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
 	"github.com/gorilla/websocket"
-	"github.com/soheilhy/cmux"
+
+	// "github.com/soheilhy/cmux"
 	admission "github.com/wznpp1/gost_x/admission/wrapper"
 	xnet "github.com/wznpp1/gost_x/internal/net"
 	"github.com/wznpp1/gost_x/internal/net/proxyproto"
@@ -91,14 +92,14 @@ func (l *wsListener) Init(md md.Metadata) (err error) {
 		network = "tcp4"
 	}
 
-	ln2, err := net.Listen(network, l.options.Addr)
+	ln, err := net.Listen(network, l.options.Addr)
 	if err != nil {
 		return
 	}
 
-	m := cmux.New(ln2)
+	// m := cmux.New(ln2)
 
-	ln := m.Match(cmux.Any())
+	// ln := m.Match(cmux.Any())
 
 	ln = metrics.WrapListener(l.options.Service, ln)
 	ln = proxyproto.WrapListener(l.options.ProxyProtocol, ln, 10*time.Second)

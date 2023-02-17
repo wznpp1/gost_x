@@ -93,7 +93,7 @@ func (l *wsListener) Init(md md.Metadata) (err error) {
 		network = "tcp4"
 	}
 
-	ln, err := net.Listen(network, l.options.Addr)
+	ln2, err := net.Listen(network, l.options.Addr)
 	if err != nil {
 		return
 	}

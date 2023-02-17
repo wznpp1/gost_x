@@ -11,7 +11,7 @@ import (
 	"github.com/go-gost/core/connector"
 	md "github.com/go-gost/core/metadata"
 	"github.com/go-gost/gosocks4"
-	"github.com/go-gost/x/registry"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

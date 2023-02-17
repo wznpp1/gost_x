@@ -10,12 +10,12 @@ import (
 	"github.com/go-gost/core/listener"
 	"github.com/go-gost/core/logger"
 	"github.com/go-gost/relay"
-	"github.com/go-gost/x/internal/net/udp"
-	"github.com/go-gost/x/internal/util/mux"
-	relay_util "github.com/go-gost/x/internal/util/relay"
-	metrics "github.com/go-gost/x/metrics/wrapper"
-	xservice "github.com/go-gost/x/service"
 	"github.com/google/uuid"
+	"github.com/wznpp1/gost_x/internal/net/udp"
+	"github.com/wznpp1/gost_x/internal/util/mux"
+	relay_util "github.com/wznpp1/gost_x/internal/util/relay"
+	metrics "github.com/wznpp1/gost_x/metrics/wrapper"
+	xservice "github.com/wznpp1/gost_x/service"
 )
 
 func (h *relayHandler) handleBind(ctx context.Context, conn net.Conn, network, address string, log logger.Logger) error {

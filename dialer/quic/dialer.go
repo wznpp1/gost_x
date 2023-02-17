@@ -9,9 +9,9 @@ import (
 	"github.com/go-gost/core/dialer"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	quic_util "github.com/go-gost/x/internal/util/quic"
-	"github.com/go-gost/x/registry"
 	"github.com/quic-go/quic-go"
+	quic_util "github.com/wznpp1/gost_x/internal/util/quic"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

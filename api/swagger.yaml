@@ -19,7 +19,7 @@ definitions:
                 type: string
                 x-go-name: PathPrefix
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     AdmissionConfig:
         properties:
             file:
@@ -46,7 +46,7 @@ definitions:
                 type: boolean
                 x-go-name: Whitelist
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     AuthConfig:
         properties:
             password:
@@ -56,7 +56,7 @@ definitions:
                 type: string
                 x-go-name: Username
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     AutherConfig:
         properties:
             auths:
@@ -76,7 +76,7 @@ definitions:
             reload:
                 $ref: '#/definitions/Duration'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     BypassConfig:
         properties:
             file:
@@ -103,7 +103,7 @@ definitions:
                 type: boolean
                 x-go-name: Whitelist
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ChainConfig:
         properties:
             hops:
@@ -122,7 +122,7 @@ definitions:
                 type: string
                 x-go-name: Name
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ChainGroupConfig:
         properties:
             chains:
@@ -133,7 +133,7 @@ definitions:
             selector:
                 $ref: '#/definitions/SelectorConfig'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     Config:
         properties:
             admissions:
@@ -212,7 +212,7 @@ definitions:
             tls:
                 $ref: '#/definitions/TLSConfig'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ConnectorConfig:
         properties:
             auth:
@@ -227,7 +227,7 @@ definitions:
                 type: string
                 x-go-name: Type
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     DialerConfig:
         properties:
             auth:
@@ -242,7 +242,7 @@ definitions:
                 type: string
                 x-go-name: Type
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     Duration:
         description: |-
             A Duration represents the elapsed time between two instants
@@ -257,7 +257,7 @@ definitions:
                 type: string
                 x-go-name: Path
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     FileRecorder:
         properties:
             path:
@@ -267,7 +267,7 @@ definitions:
                 type: string
                 x-go-name: Sep
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ForwardNodeConfig:
         properties:
             addr:
@@ -291,7 +291,7 @@ definitions:
                 type: string
                 x-go-name: Protocol
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ForwarderConfig:
         properties:
             name:
@@ -311,7 +311,7 @@ definitions:
                 type: array
                 x-go-name: Targets
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     HTTPLoader:
         properties:
             timeout:
@@ -320,7 +320,7 @@ definitions:
                 type: string
                 x-go-name: URL
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     HandlerConfig:
         properties:
             auth:
@@ -355,7 +355,7 @@ definitions:
                 type: string
                 x-go-name: Type
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     HopConfig:
         properties:
             bypass:
@@ -388,7 +388,7 @@ definitions:
             sockopts:
                 $ref: '#/definitions/SockOptsConfig'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     HostMappingConfig:
         properties:
             aliases:
@@ -403,7 +403,7 @@ definitions:
                 type: string
                 x-go-name: IP
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     HostsConfig:
         properties:
             file:
@@ -423,7 +423,7 @@ definitions:
             reload:
                 $ref: '#/definitions/Duration'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     IngressConfig:
         properties:
             file:
@@ -443,7 +443,7 @@ definitions:
                 type: array
                 x-go-name: Rules
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     IngressRuleConfig:
         properties:
             endpoint:
@@ -453,7 +453,7 @@ definitions:
                 type: string
                 x-go-name: Hostname
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     LimiterConfig:
         properties:
             file:
@@ -473,7 +473,7 @@ definitions:
             reload:
                 $ref: '#/definitions/Duration'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ListenerConfig:
         properties:
             auth:
@@ -501,7 +501,7 @@ definitions:
                 type: string
                 x-go-name: Type
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     LogConfig:
         properties:
             format:
@@ -516,7 +516,7 @@ definitions:
             rotation:
                 $ref: '#/definitions/LogRotationConfig'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     LogRotationConfig:
         properties:
             compress:
@@ -558,7 +558,7 @@ definitions:
                 type: integer
                 x-go-name: MaxSize
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     MetricsConfig:
         properties:
             addr:
@@ -568,7 +568,7 @@ definitions:
                 type: string
                 x-go-name: Path
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     NameserverConfig:
         properties:
             addr:
@@ -591,7 +591,7 @@ definitions:
             ttl:
                 $ref: '#/definitions/Duration'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     NodeConfig:
         properties:
             addr:
@@ -634,14 +634,14 @@ definitions:
             sockopts:
                 $ref: '#/definitions/SockOptsConfig'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ProfilingConfig:
         properties:
             addr:
                 type: string
                 x-go-name: Addr
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     RecorderConfig:
         properties:
             file:
@@ -652,7 +652,7 @@ definitions:
             redis:
                 $ref: '#/definitions/RedisRecorder'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     RecorderObject:
         properties:
             name:
@@ -662,7 +662,7 @@ definitions:
                 type: string
                 x-go-name: Record
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     RedisLoader:
         properties:
             addr:
@@ -682,7 +682,7 @@ definitions:
                 type: string
                 x-go-name: Type
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     RedisRecorder:
         properties:
             addr:
@@ -702,7 +702,7 @@ definitions:
                 type: string
                 x-go-name: Type
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ResolverConfig:
         properties:
             name:
@@ -714,7 +714,7 @@ definitions:
                 type: array
                 x-go-name: Nameservers
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     Response:
         properties:
             code:
@@ -725,7 +725,7 @@ definitions:
                 type: string
                 x-go-name: Msg
         type: object
-        x-go-package: github.com/go-gost/x/api
+        x-go-package: github.com/wznpp1/gost_x/api
     SelectorConfig:
         properties:
             failTimeout:
@@ -738,7 +738,7 @@ definitions:
                 type: string
                 x-go-name: Strategy
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     ServiceConfig:
         properties:
             addr:
@@ -800,7 +800,7 @@ definitions:
             sockopts:
                 $ref: '#/definitions/SockOptsConfig'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     SockOptsConfig:
         properties:
             mark:
@@ -808,7 +808,7 @@ definitions:
                 type: integer
                 x-go-name: Mark
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
     TLSConfig:
         properties:
             caFile:
@@ -835,7 +835,7 @@ definitions:
             validity:
                 $ref: '#/definitions/Duration'
         type: object
-        x-go-package: github.com/go-gost/x/config
+        x-go-package: github.com/wznpp1/gost_x/config
 info:
     title: Documentation of Web API.
     version: 1.0.0

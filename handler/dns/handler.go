@@ -14,11 +14,11 @@ import (
 	"github.com/go-gost/core/hosts"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	xchain "github.com/go-gost/x/chain"
-	resolver_util "github.com/go-gost/x/internal/util/resolver"
-	"github.com/go-gost/x/registry"
-	"github.com/go-gost/x/resolver/exchanger"
 	"github.com/miekg/dns"
+	xchain "github.com/wznpp1/gost_x/chain"
+	resolver_util "github.com/wznpp1/gost_x/internal/util/resolver"
+	"github.com/wznpp1/gost_x/registry"
+	"github.com/wznpp1/gost_x/resolver/exchanger"
 )
 
 const (

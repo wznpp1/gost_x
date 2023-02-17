@@ -11,8 +11,8 @@ import (
 
 	admission_pkg "github.com/go-gost/core/admission"
 	"github.com/go-gost/core/logger"
-	"github.com/go-gost/x/internal/loader"
-	"github.com/go-gost/x/internal/matcher"
+	"github.com/wznpp1/gost_x/internal/loader"
+	"github.com/wznpp1/gost_x/internal/matcher"
 )
 
 type options struct {

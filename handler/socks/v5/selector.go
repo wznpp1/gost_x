@@ -7,7 +7,7 @@ import (
 	"github.com/go-gost/core/auth"
 	"github.com/go-gost/core/logger"
 	"github.com/go-gost/gosocks5"
-	"github.com/go-gost/x/internal/util/socks"
+	"github.com/wznpp1/gost_x/internal/util/socks"
 )
 
 type serverSelector struct {

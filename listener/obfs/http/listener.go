@@ -7,14 +7,14 @@ import (
 	"github.com/go-gost/core/listener"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	admission "github.com/go-gost/x/admission/wrapper"
-	climiter "github.com/go-gost/x/limiter/conn/wrapper"
-	limiter "github.com/go-gost/x/limiter/traffic/wrapper"
-	metrics "github.com/go-gost/x/metrics/wrapper"
+	admission "github.com/wznpp1/gost_x/admission/wrapper"
+	climiter "github.com/wznpp1/gost_x/limiter/conn/wrapper"
+	limiter "github.com/wznpp1/gost_x/limiter/traffic/wrapper"
+	metrics "github.com/wznpp1/gost_x/metrics/wrapper"
 
-	xnet "github.com/go-gost/x/internal/net"
-	"github.com/go-gost/x/internal/net/proxyproto"
-	"github.com/go-gost/x/registry"
+	xnet "github.com/wznpp1/gost_x/internal/net"
+	"github.com/wznpp1/gost_x/internal/net/proxyproto"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

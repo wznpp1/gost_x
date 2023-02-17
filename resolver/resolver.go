@@ -9,8 +9,8 @@ import (
 	"github.com/go-gost/core/chain"
 	"github.com/go-gost/core/logger"
 	resolverpkg "github.com/go-gost/core/resolver"
-	resolver_util "github.com/go-gost/x/internal/util/resolver"
-	"github.com/go-gost/x/resolver/exchanger"
+	resolver_util "github.com/wznpp1/gost_x/internal/util/resolver"
+	"github.com/wznpp1/gost_x/resolver/exchanger"
 	"github.com/miekg/dns"
 )
 

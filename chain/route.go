@@ -10,7 +10,7 @@ import (
 	"github.com/go-gost/core/logger"
 	"github.com/go-gost/core/metrics"
 	"github.com/go-gost/core/selector"
-	xmetrics "github.com/go-gost/x/metrics"
+	xmetrics "github.com/wznpp1/gost_x/metrics"
 )
 
 type RouteOptions struct {

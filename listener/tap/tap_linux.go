@@ -5,9 +5,9 @@ import (
 	"io"
 	"net"
 
-	tap_util "github.com/go-gost/x/internal/util/tap"
 	"github.com/songgao/water"
 	"github.com/vishvananda/netlink"
+	tap_util "github.com/wznpp1/gost_x/internal/util/tap"
 )
 
 func (l *tapListener) createTap() (dev io.ReadWriteCloser, name string, ip net.IP, err error) {

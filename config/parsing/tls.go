@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/go-gost/core/logger"
-	"github.com/go-gost/x/config"
+	"github.com/wznpp1/gost_x/config"
 )
 
 var (

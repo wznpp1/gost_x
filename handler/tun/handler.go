@@ -11,9 +11,9 @@ import (
 	"github.com/go-gost/core/chain"
 	"github.com/go-gost/core/handler"
 	md "github.com/go-gost/core/metadata"
-	tun_util "github.com/go-gost/x/internal/util/tun"
-	"github.com/go-gost/x/registry"
 	"github.com/songgao/water/waterutil"
+	tun_util "github.com/wznpp1/gost_x/internal/util/tun"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 var (

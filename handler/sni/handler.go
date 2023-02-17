@@ -20,10 +20,10 @@ import (
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
 	dissector "github.com/go-gost/tls-dissector"
-	xio "github.com/go-gost/x/internal/io"
-	netpkg "github.com/go-gost/x/internal/net"
-	sx "github.com/go-gost/x/internal/util/selector"
-	"github.com/go-gost/x/registry"
+	xio "github.com/wznpp1/gost_x/internal/io"
+	netpkg "github.com/wznpp1/gost_x/internal/net"
+	sx "github.com/wznpp1/gost_x/internal/util/selector"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

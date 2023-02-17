@@ -9,7 +9,7 @@ import (
 	"os/exec"
 	"strings"
 
-	tun_util "github.com/go-gost/x/internal/util/tun"
+	tun_util "github.com/wznpp1/gost_x/internal/util/tun"
 )
 
 const (

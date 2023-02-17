@@ -15,12 +15,12 @@ import (
 	"github.com/go-gost/core/handler"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	"github.com/go-gost/x/internal/util/ss"
-	tap_util "github.com/go-gost/x/internal/util/tap"
-	"github.com/go-gost/x/registry"
 	"github.com/shadowsocks/go-shadowsocks2/core"
 	"github.com/shadowsocks/go-shadowsocks2/shadowaead"
 	"github.com/songgao/water/waterutil"
+	"github.com/wznpp1/gost_x/internal/util/ss"
+	tap_util "github.com/wznpp1/gost_x/internal/util/tap"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

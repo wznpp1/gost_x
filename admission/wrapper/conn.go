@@ -8,8 +8,8 @@ import (
 
 	"github.com/go-gost/core/admission"
 	"github.com/go-gost/core/metadata"
-	xnet "github.com/go-gost/x/internal/net"
-	"github.com/go-gost/x/internal/net/udp"
+	xnet "github.com/wznpp1/gost_x/internal/net"
+	"github.com/wznpp1/gost_x/internal/net/udp"
 )
 
 var (

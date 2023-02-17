@@ -11,7 +11,7 @@ import (
 
 	"github.com/go-gost/core/hosts"
 	"github.com/go-gost/core/logger"
-	"github.com/go-gost/x/internal/loader"
+	"github.com/wznpp1/gost_x/internal/loader"
 )
 
 type Mapping struct {

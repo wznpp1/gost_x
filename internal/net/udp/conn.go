@@ -4,7 +4,7 @@ import (
 	"io"
 	"net"
 
-	xnet "github.com/go-gost/x/internal/net"
+	xnet "github.com/wznpp1/gost_x/internal/net"
 )
 
 type Conn interface {

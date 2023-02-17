@@ -15,12 +15,12 @@ import (
 	"github.com/go-gost/core/recorder"
 	"github.com/go-gost/core/selector"
 	"github.com/go-gost/core/service"
-	xchain "github.com/go-gost/x/chain"
-	"github.com/go-gost/x/config"
-	tls_util "github.com/go-gost/x/internal/util/tls"
-	"github.com/go-gost/x/metadata"
-	"github.com/go-gost/x/registry"
-	xservice "github.com/go-gost/x/service"
+	xchain "github.com/wznpp1/gost_x/chain"
+	"github.com/wznpp1/gost_x/config"
+	tls_util "github.com/wznpp1/gost_x/internal/util/tls"
+	"github.com/wznpp1/gost_x/metadata"
+	"github.com/wznpp1/gost_x/registry"
+	xservice "github.com/wznpp1/gost_x/service"
 )
 
 func ParseService(cfg *config.ServiceConfig) (service.Service, error) {

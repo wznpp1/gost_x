@@ -9,8 +9,8 @@ import (
 	"github.com/go-gost/core/logger"
 	mdata "github.com/go-gost/core/metadata"
 	mdutil "github.com/go-gost/core/metadata/util"
-	xingress "github.com/go-gost/x/ingress"
-	"github.com/go-gost/x/registry"
+	xingress "github.com/wznpp1/gost_x/ingress"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 type metadata struct {

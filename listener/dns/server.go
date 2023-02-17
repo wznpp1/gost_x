@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"time"
 
-	xnet "github.com/go-gost/x/internal/net"
+	xnet "github.com/wznpp1/gost_x/internal/net"
 )
 
 type Server interface {

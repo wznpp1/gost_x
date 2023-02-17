@@ -7,8 +7,8 @@ import (
 
 	"github.com/go-gost/core/logger"
 	"github.com/go-gost/gosocks5"
-	"github.com/go-gost/x/internal/net/udp"
-	"github.com/go-gost/x/internal/util/socks"
+	"github.com/wznpp1/gost_x/internal/net/udp"
+	"github.com/wznpp1/gost_x/internal/util/socks"
 )
 
 func (h *socks5Handler) handleUDPTun(ctx context.Context, conn net.Conn, network, address string, log logger.Logger) error {

@@ -12,7 +12,7 @@ import (
 	"unsafe"
 
 	"github.com/go-gost/core/common/bufpool"
-	xnet "github.com/go-gost/x/internal/net"
+	xnet "github.com/wznpp1/gost_x/internal/net"
 	"golang.org/x/sys/unix"
 )
 

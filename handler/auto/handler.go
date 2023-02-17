@@ -11,8 +11,8 @@ import (
 	md "github.com/go-gost/core/metadata"
 	"github.com/go-gost/gosocks4"
 	"github.com/go-gost/gosocks5"
-	netpkg "github.com/go-gost/x/internal/net"
-	"github.com/go-gost/x/registry"
+	netpkg "github.com/wznpp1/gost_x/internal/net"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

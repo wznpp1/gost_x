@@ -17,9 +17,9 @@ import (
 	"github.com/go-gost/core/handler"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	xnet "github.com/go-gost/x/internal/net"
-	"github.com/go-gost/x/internal/util/forward"
-	"github.com/go-gost/x/registry"
+	xnet "github.com/wznpp1/gost_x/internal/net"
+	"github.com/wznpp1/gost_x/internal/util/forward"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

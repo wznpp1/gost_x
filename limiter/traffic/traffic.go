@@ -12,8 +12,8 @@ import (
 	"github.com/alecthomas/units"
 	limiter "github.com/go-gost/core/limiter/traffic"
 	"github.com/go-gost/core/logger"
-	"github.com/go-gost/x/internal/loader"
 	"github.com/patrickmn/go-cache"
+	"github.com/wznpp1/gost_x/internal/loader"
 	"github.com/yl2chen/cidranger"
 )
 

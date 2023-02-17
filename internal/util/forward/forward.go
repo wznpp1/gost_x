@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	dissector "github.com/go-gost/tls-dissector"
-	xio "github.com/go-gost/x/internal/io"
+	xio "github.com/wznpp1/gost_x/internal/io"
 )
 
 func Sniffing(ctx context.Context, rdw io.ReadWriter) (rw io.ReadWriter, host string, protocol string, err error) {

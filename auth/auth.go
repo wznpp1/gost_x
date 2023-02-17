@@ -10,8 +10,8 @@ import (
 
 	"github.com/go-gost/core/auth"
 	"github.com/go-gost/core/logger"
-	"github.com/go-gost/x/internal/loader"
-	xlogger "github.com/go-gost/x/logger"
+	"github.com/wznpp1/gost_x/internal/loader"
+	xlogger "github.com/wznpp1/gost_x/logger"
 )
 
 type options struct {

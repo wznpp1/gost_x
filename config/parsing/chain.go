@@ -12,12 +12,12 @@ import (
 	"github.com/go-gost/core/logger"
 	"github.com/go-gost/core/metadata"
 	mdutil "github.com/go-gost/core/metadata/util"
-	auther "github.com/go-gost/x/auth"
-	xchain "github.com/go-gost/x/chain"
-	"github.com/go-gost/x/config"
-	tls_util "github.com/go-gost/x/internal/util/tls"
-	mdx "github.com/go-gost/x/metadata"
-	"github.com/go-gost/x/registry"
+	auther "github.com/wznpp1/gost_x/auth"
+	xchain "github.com/wznpp1/gost_x/chain"
+	"github.com/wznpp1/gost_x/config"
+	tls_util "github.com/wznpp1/gost_x/internal/util/tls"
+	mdx "github.com/wznpp1/gost_x/metadata"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func ParseChain(cfg *config.ChainConfig) (chain.Chainer, error) {

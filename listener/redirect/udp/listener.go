@@ -6,10 +6,10 @@ import (
 	"github.com/go-gost/core/listener"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	admission "github.com/go-gost/x/admission/wrapper"
-	limiter "github.com/go-gost/x/limiter/traffic/wrapper"
-	metrics "github.com/go-gost/x/metrics/wrapper"
-	"github.com/go-gost/x/registry"
+	admission "github.com/wznpp1/gost_x/admission/wrapper"
+	limiter "github.com/wznpp1/gost_x/limiter/traffic/wrapper"
+	metrics "github.com/wznpp1/gost_x/metrics/wrapper"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

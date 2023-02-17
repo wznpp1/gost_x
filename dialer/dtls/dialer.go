@@ -8,9 +8,9 @@ import (
 	"github.com/go-gost/core/dialer"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-	xdtls "github.com/go-gost/x/internal/util/dtls"
-	"github.com/go-gost/x/registry"
 	"github.com/pion/dtls/v2"
+	xdtls "github.com/wznpp1/gost_x/internal/util/dtls"
+	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {

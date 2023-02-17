@@ -6,7 +6,7 @@ import (
 
 	mdata "github.com/go-gost/core/metadata"
 	mdutil "github.com/go-gost/core/metadata/util"
-	tap_util "github.com/go-gost/x/internal/util/tap"
+	tap_util "github.com/wznpp1/gost_x/internal/util/tap"
 )
 
 const (

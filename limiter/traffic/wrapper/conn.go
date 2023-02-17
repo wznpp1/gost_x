@@ -11,9 +11,9 @@ import (
 
 	limiter "github.com/go-gost/core/limiter/traffic"
 	"github.com/go-gost/core/metadata"
-	xnet "github.com/go-gost/x/internal/net"
-	"github.com/go-gost/x/internal/net/udp"
 	"github.com/patrickmn/go-cache"
+	xnet "github.com/wznpp1/gost_x/internal/net"
+	"github.com/wznpp1/gost_x/internal/net/udp"
 )
 
 var (

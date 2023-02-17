@@ -1,4 +1,4 @@
-module github.com/go-gost/x
+module github.com/wznpp1/gost_x
 
 go 1.20
 

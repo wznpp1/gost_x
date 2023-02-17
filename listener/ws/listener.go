@@ -1,27 +1,25 @@
 package ws
 
 import (
-	// "crypto/tls"
 	"net"
 	"net/http"
 	"net/http/httputil"
-
-	// "time"
+	"time"
 
 	"github.com/go-gost/core/listener"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
+	admission "github.com/go-gost/x/admission/wrapper"
+	xnet "github.com/go-gost/x/internal/net"
+	"github.com/go-gost/x/internal/net/proxyproto"
+	ws_util "github.com/go-gost/x/internal/util/ws"
+	climiter "github.com/go-gost/x/limiter/conn/wrapper"
+	limiter "github.com/go-gost/x/limiter/traffic/wrapper"
+	metrics "github.com/go-gost/x/metrics/wrapper"
+	"github.com/go-gost/x/registry"
 	"github.com/gorilla/websocket"
 
 	"github.com/soheilhy/cmux"
-	// admission "github.com/wznpp1/gost_x/admission/wrapper"
-	xnet "github.com/wznpp1/gost_x/internal/net"
-	// "github.com/wznpp1/gost_x/internal/net/proxyproto"
-	ws_util "github.com/wznpp1/gost_x/internal/util/ws"
-	// climiter "github.com/wznpp1/gost_x/limiter/conn/wrapper"
-	// limiter "github.com/wznpp1/gost_x/limiter/traffic/wrapper"
-	// metrics "github.com/wznpp1/gost_x/metrics/wrapper"
-	"github.com/wznpp1/gost_x/registry"
 )
 
 func init() {
@@ -97,11 +95,14 @@ func (l *wsListener) Init(md md.Metadata) (err error) {
 	if err != nil {
 		return
 	}
+	ln2 = metrics.WrapListener(l.options.Service, ln2)
+	ln2 = proxyproto.WrapListener(l.options.ProxyProtocol, ln2, 10*time.Second)
+	ln2 = admission.WrapListener(l.options.Admission, ln2)
+	ln2 = limiter.WrapListener(l.options.TrafficLimiter, ln2)
+	ln2 = climiter.WrapListener(l.options.ConnLimiter, ln2)
 
 	m := cmux.New(ln2)
-
 	ln := m.Match(cmux.Any())
-
 	l.addr = ln.Addr()
 
 	go func() {

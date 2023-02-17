@@ -18,8 +18,7 @@ import (
 	limiter "github.com/wznpp1/gost_x/limiter/traffic/wrapper"
 	metrics "github.com/wznpp1/gost_x/metrics/wrapper"
 	"github.com/wznpp1/gost_x/registry"
-
-	"github.com/soheilhy/cmux"
+	// "github.com/soheilhy/cmux"
 )
 
 func init() {
@@ -101,12 +100,12 @@ func (l *wsListener) Init(md md.Metadata) (err error) {
 	ln2 = limiter.WrapListener(l.options.TrafficLimiter, ln2)
 	ln2 = climiter.WrapListener(l.options.ConnLimiter, ln2)
 
-	m := cmux.New(ln2)
-	ln := m.Match(cmux.Any())
-	l.addr = ln.Addr()
+	// m := cmux.New(ln2)
+	// ln := m.Match(cmux.Any())
+	l.addr = ln2.Addr()
 
 	go func() {
-		err := l.srv.Serve(ln)
+		err := l.srv.Serve(ln2)
 		if err != nil {
 			l.errChan <- err
 		}

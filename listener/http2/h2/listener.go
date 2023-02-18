@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"net/url"
+	"strings"
 	"time"
 
 	"github.com/cssivision/reverseproxy"
@@ -148,6 +149,16 @@ func (l *h2Listener) handleFunc(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.RequestURI == "/proxy" {
+		path, err := url.Parse("http://127.0.0.1:8899/_/")
+		if err != nil {
+			panic(err)
+		}
+		proxy := reverseproxy.NewReverseProxy(path)
+		proxy.ServeHTTP(w, r)
+		return
+	}
+
+	if find := strings.Contains(r.RequestURI, "/proxy"); find {
 		path, err := url.Parse("http://127.0.0.1:8899/_/")
 		if err != nil {
 			panic(err)

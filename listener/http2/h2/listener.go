@@ -3,6 +3,7 @@ package h2
 import (
 	"crypto/tls"
 	"errors"
+	"fmt"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -20,9 +21,6 @@ import (
 	"github.com/wznpp1/gost_x/registry"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
-
-	"github.com/vulcand/oxy/v2/forward"
-	"github.com/vulcand/oxy/v2/testutils"
 )
 
 func init() {
@@ -142,10 +140,23 @@ func (l *h2Listener) Close() (err error) {
 }
 
 func (l *h2Listener) handleFunc(w http.ResponseWriter, r *http.Request) {
+
 	if l.logger.IsLevelEnabled(logger.TraceLevel) {
 		dump, _ := httputil.DumpRequest(r, false)
 		l.logger.Trace(string(dump))
 	}
+
+	if r.RequestURI == "/proxy" {
+		// l.logger.Info("/proxy")
+		// fwd := forward.New(false)
+		// r.URL = testutils.ParseURI("http://localhost:8899/_/001")
+		// fwd.ServeHTTP(w, r)
+		w.WriteHeader(http.StatusOK)
+		fmt.Fprint(w, "Hello world")
+		return
+		// fwd.ServeHTTP(w, r)
+	}
+
 	conn, err := l.upgrade(w, r)
 	if err != nil {
 		l.logger.Error(err)
@@ -162,12 +173,6 @@ func (l *h2Listener) handleFunc(w http.ResponseWriter, r *http.Request) {
 }
 
 func (l *h2Listener) upgrade(w http.ResponseWriter, r *http.Request) (*conn, error) {
-	if l.md.path == "/proxy" && r.Method != http.MethodConnect {
-		fwd := forward.New(false)
-		r.URL = testutils.ParseURI("http://localhost:8899/_/001")
-		// fwd.ServeHTTP(w, r)
-		fwd.ServeHTTP(w, r)
-	}
 
 	if l.md.path == "" && r.Method != http.MethodConnect {
 		w.WriteHeader(http.StatusMethodNotAllowed)

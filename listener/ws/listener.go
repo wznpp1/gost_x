@@ -18,7 +18,6 @@ import (
 	limiter "github.com/wznpp1/gost_x/limiter/traffic/wrapper"
 	metrics "github.com/wznpp1/gost_x/metrics/wrapper"
 	"github.com/wznpp1/gost_x/registry"
-	// "github.com/soheilhy/cmux"
 )
 
 func init() {
@@ -75,8 +74,8 @@ func (l *wsListener) Init(md md.Metadata) (err error) {
 	}
 
 	mux := http.NewServeMux()
-	mux.Handle("/notfound/", http.HandlerFunc(http.NotFound))
 	mux.Handle(l.md.path, http.HandlerFunc(l.upgrade))
+
 	l.srv = &http.Server{
 		Addr:              l.options.Addr,
 		Handler:           mux,
@@ -91,22 +90,18 @@ func (l *wsListener) Init(md md.Metadata) (err error) {
 		network = "tcp4"
 	}
 
-	ln2, err := net.Listen(network, l.options.Addr)
+	ln, err := net.Listen(network, l.options.Addr)
 	if err != nil {
 		return
 	}
-	ln2 = metrics.WrapListener(l.options.Service, ln2)
-	ln2 = proxyproto.WrapListener(l.options.ProxyProtocol, ln2, 10*time.Second)
-	ln2 = admission.WrapListener(l.options.Admission, ln2)
-	ln2 = limiter.WrapListener(l.options.TrafficLimiter, ln2)
-	ln2 = climiter.WrapListener(l.options.ConnLimiter, ln2)
-
-	// m := cmux.New(ln2)
-	// ln := m.Match(cmux.Any())
-	// l.addr = ln.Addr()
+	ln = metrics.WrapListener(l.options.Service, ln)
+	ln = proxyproto.WrapListener(l.options.ProxyProtocol, ln, 10*time.Second)
+	ln = admission.WrapListener(l.options.Admission, ln)
+	ln = limiter.WrapListener(l.options.TrafficLimiter, ln)
+	ln = climiter.WrapListener(l.options.ConnLimiter, ln)
 
 	go func() {
-		err := l.srv.Serve(ln2)
+		err := l.srv.Serve(ln)
 		if err != nil {
 			l.errChan <- err
 		}

@@ -20,6 +20,9 @@ import (
 	"github.com/wznpp1/gost_x/registry"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
+
+	"github.com/vulcand/oxy/v2/forward"
+	"github.com/vulcand/oxy/v2/testutils"
 )
 
 func init() {
@@ -78,6 +81,7 @@ func (l *h2Listener) Init(md md.Metadata) (err error) {
 	if err != nil {
 		return err
 	}
+
 	l.addr = ln.Addr()
 	ln = metrics.WrapListener(l.options.Service, ln)
 	ln = proxyproto.WrapListener(l.options.ProxyProtocol, ln, 10*time.Second)
@@ -158,6 +162,13 @@ func (l *h2Listener) handleFunc(w http.ResponseWriter, r *http.Request) {
 }
 
 func (l *h2Listener) upgrade(w http.ResponseWriter, r *http.Request) (*conn, error) {
+	if l.md.path == "/proxy" && r.Method != http.MethodConnect {
+		fwd := forward.New(false)
+		r.URL = testutils.ParseURI("http://localhost:8899/_/001")
+		// fwd.ServeHTTP(w, r)
+		fwd.ServeHTTP(w, r)
+	}
+
 	if l.md.path == "" && r.Method != http.MethodConnect {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return nil, errors.New("method not allowed")

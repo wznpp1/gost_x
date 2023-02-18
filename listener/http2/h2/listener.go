@@ -6,14 +6,13 @@ import (
 	"net"
 	"net/http"
 	"net/http/httputil"
-	"net/url"
 	"time"
 
-	"github.com/cssivision/reverseproxy"
 	"github.com/go-gost/core/listener"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
-
+	"github.com/vulcand/oxy/v2/forward"
+	"github.com/vulcand/oxy/v2/testutils"
 	admission "github.com/wznpp1/gost_x/admission/wrapper"
 	xnet "github.com/wznpp1/gost_x/internal/net"
 	"github.com/wznpp1/gost_x/internal/net/proxyproto"
@@ -149,13 +148,15 @@ func (l *h2Listener) handleFunc(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.RequestURI == "/proxy" {
-		path, err := url.Parse("http://127.0.0.1:8899/_/")
-		if err != nil {
-			panic(err)
-		}
-		proxy := reverseproxy.NewReverseProxy(path)
-		proxy.ServeHTTP(w, r)
+		// l.logger.Info("/proxy")
+		// fwd := forward.New(false)
+		// r.URL = testutils.ParseURI("http://localhost:8899/_/001")
+		// fwd.ServeHTTP(w, r)
+		fwd := forward.New(false)
+		r.URL = testutils.ParseURI("http://localhost:8899")
+		fwd.ServeHTTP(w, r)
 		return
+		// fwd.ServeHTTP(w, r)
 	}
 
 	conn, err := l.upgrade(w, r)

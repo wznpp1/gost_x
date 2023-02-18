@@ -3,7 +3,6 @@ package h2
 import (
 	"crypto/tls"
 	"errors"
-	"fmt"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -12,6 +11,8 @@ import (
 	"github.com/go-gost/core/listener"
 	"github.com/go-gost/core/logger"
 	md "github.com/go-gost/core/metadata"
+	"github.com/vulcand/oxy/v2/forward"
+	"github.com/vulcand/oxy/v2/testutils"
 	admission "github.com/wznpp1/gost_x/admission/wrapper"
 	xnet "github.com/wznpp1/gost_x/internal/net"
 	"github.com/wznpp1/gost_x/internal/net/proxyproto"
@@ -151,8 +152,9 @@ func (l *h2Listener) handleFunc(w http.ResponseWriter, r *http.Request) {
 		// fwd := forward.New(false)
 		// r.URL = testutils.ParseURI("http://localhost:8899/_/001")
 		// fwd.ServeHTTP(w, r)
-		w.WriteHeader(http.StatusOK)
-		fmt.Fprint(w, "Hello world")
+		fwd := forward.New(false)
+		r.URL = testutils.ParseURI("http://localhost:8899/_/001/")
+		fwd.ServeHTTP(w, r)
 		return
 		// fwd.ServeHTTP(w, r)
 	}
